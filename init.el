@@ -71,6 +71,13 @@
 (use-package projectile
   :ensure t
   :init
+  (setq projectile-project-search-path '("~/Developer/"))
+  :config
   (projectile-mode +1)
-  :bind (:map projectile-mode-map
-	      ("s-p" . projectile-command-map)))
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map))
+
+;; make it look nice
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
