@@ -32,9 +32,6 @@
 (setq scroll-step   1)
 (setq scroll-margin 10)
 
-;; super useful for mini-buffer completions
-(fido-vertical-mode 1)
-
 ;; set up melpa for newer packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -63,6 +60,12 @@
   :ensure t
   :config
   (load-theme 'zenburn t))
+
+;; good selection framework for projectile
+(use-package vertico
+  :ensure t
+  :init
+  (vertico-mode +1))
 
 ;; super useful project navigation
 (use-package projectile
