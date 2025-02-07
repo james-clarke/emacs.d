@@ -29,7 +29,7 @@
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; why is this not the default??
-(setq-default global-visual-line-mode t)
+(setq-default truncate-lines t)
 
 ;; vim-like scrolloff
 (setq scroll-step   1)
@@ -90,4 +90,5 @@
   (setq dashboard-items '((recents   . 5)
 			  (bookmarks . 5)
 			  (projects  . 5)))
+  (setq dashboard-icon-type 'all-the-icons)
   (dashboard-setup-startup-hook))
