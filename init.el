@@ -28,6 +28,9 @@
 ;; add line numbers
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
+;; why is this not the default??
+(setq-default global-visual-line-mode t)
+
 ;; vim-like scrolloff
 (setq scroll-step   1)
 (setq scroll-margin 10)
@@ -80,4 +83,11 @@
 (use-package dashboard
   :ensure t
   :config
+  (setq dashboard-projects-backend 'projectile)
+  (setq dashboard-banner-logo-title "james-clarke's emacs config: github.com/james-clarke/emacs.d")
+  (setq dashboard-startup-banner "~/Pictures/pp-small.png")
+  (setq dashboard-center-content t)
+  (setq dashboard-items '((recents   . 5)
+			  (bookmarks . 5)
+			  (projects  . 5)))
   (dashboard-setup-startup-hook))
