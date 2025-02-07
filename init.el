@@ -114,6 +114,7 @@
   (treemacs-follow-mode t)
   (treemacs-filewatch-mode t)
   (treemacs-fringe-indicator-mode 'always)
+  (treemacs-resize-icons 16)
   (when treemacs-python-executable
     (treemacs-git-commit-diff-mode t))
   (pcase (cons (not (null (executable-find "git")))
@@ -149,3 +150,12 @@
 ;; essential for working with git
 (use-package magit
   :ensure t)
+
+;; give me tabs
+(use-package centaur-tabs 
+  :demand
+  :config
+  (centaur-tabs-mode t)
+  :bind
+  ("C-S-<tab>" . centaur-tabs-backward)
+  ("C-<tab>" . centaur-tabs-forward))
