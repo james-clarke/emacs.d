@@ -43,8 +43,18 @@
 ;; need my vim keybindings
 (use-package evil
   :ensure t
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
   :config
   (evil-mode 1))
+
+;; must have
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))
 
 ;; provides useful functions for evil
 (use-package goto-chg
@@ -113,30 +123,29 @@
     (`(t . _)
      (treemacs-git-mode 'simple)))
   (treemacs-hide-gitignored-files-mode nil)
-  :bind
-  (:map global-map
-	("M-0"       . treemacs-select-window)
-	("C-x t 1"   . treemacs-delete-other-windows)
-	("C-x t t"   . treemacs)
-	("C-x t d"   . treemacs-select-directory)
-	("C-x t B"   . treemacs-bookmark)
-	("C-x t C-t" . treemacs-find-file)
-	("C-x t M-t" . treemacs-find-tag)))
+  :bind (:map global-map
+	      ("M-0"       . treemacs-select-window)
+	      ("C-x t 1"   . treemacs-delete-other-windows)
+	      ("C-x t t"   . treemacs)
+	      ("C-x t d"   . treemacs-select-directory)
+	      ("C-x t B"   . treemacs-bookmark)
+	      ("C-x t C-t" . treemacs-find-file)
+	      ("C-x t M-t" . treemacs-find-tag)))
 
+;; treemacs integrations
 (use-package treemacs-evil
   :after (treemacs evil)
   :ensure t)
-
 (use-package treemacs-projectile
   :after (treemacs projectile)
   :ensure t)
-
 (use-package treemacs-icons-dired
   :hook (dired-mode . treemacs-icons-dired-enable-once)
   :ensure t)
+(use-package treemacs-magit
+  :after (treemacs magit)
+  :ensure t)
 
-;; (use-package treemacs-magit
-;;   :after (treemacs magit)
-;;   :ensure t)
-
-(treemacs-start-on-boot)
+;; essential for working with git
+(use-package magit
+  :ensure t)
