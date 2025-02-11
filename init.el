@@ -16,11 +16,6 @@
 ;; remove start-up screen
 (setq inhibit-startup-screen t)
 
-;; ui
-(tool-bar-mode    -1)
-(scroll-bar-mode  -1)
-(tooltip-mode     -1)
-
 ;; font
 (add-to-list 'default-frame-alist
              '(font . "SFMono Nerd Font-16"))
@@ -176,3 +171,10 @@
   :ensure t
   :config
   (add-hook 'after-init-hook 'global-company-mode))
+
+(use-package markdown-mode
+  :ensure t
+  :mode
+  ("README\\.md\\'" . gfm-mode)
+  :init
+  (setq markdown-command "multimarkdown"))
