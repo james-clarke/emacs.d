@@ -89,6 +89,10 @@
   (projectile-mode +1)
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map))
 
+;; need some nice icons
+(use-package all-the-icons-nerd-fonts
+  :ensure t)
+
 ;; make it look nice
 (use-package dashboard
   :ensure t
@@ -100,7 +104,7 @@
   (setq dashboard-items '((recents   . 5)
 			  (bookmarks . 5)
 			  (projects  . 5)))
-  (setq dashboard-icon-type 'all-the-icons)
+  (setq dashboard-icon-type 'nerd-icons)
   (dashboard-setup-startup-hook))
 
 ;; file explorer
@@ -156,6 +160,19 @@
   :demand
   :config
   (centaur-tabs-mode t)
+  (setq centaur-tabs-height 16)
+  (setq centaur-tabs-set-icons t)
+  (setq centaur-tabs-icon-type 'nerd-icons)
+  (setq centaur-tabs-set-bar 'under)
+  (setq x-underline-at-descent-line t)
+  (setq centaur-tabs-set-close-button nil)
+  (setq centaur-tabs-set-modified-marker t)
   :bind
   ("C-S-<tab>" . centaur-tabs-backward)
   ("C-<tab>" . centaur-tabs-forward))
+
+;; auto-completion framework
+(use-package company
+  :ensure t
+  :config
+  (add-hook 'after-init-hook 'global-company-mode))
