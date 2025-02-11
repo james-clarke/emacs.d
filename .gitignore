@@ -4,3 +4,4 @@
 # Except init.el, .gitignore.
 !.gitignore
 !init.el
+!early-init.el
