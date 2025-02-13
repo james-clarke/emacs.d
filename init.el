@@ -172,6 +172,7 @@
   :config
   (add-hook 'after-init-hook 'global-company-mode))
 
+;; for previewing markdown files
 (use-package markdown-mode
   :ensure t
   :mode
