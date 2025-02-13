@@ -179,3 +179,7 @@
   ("README\\.md\\'" . gfm-mode)
   :init
   (setq markdown-command "multimarkdown"))
+
+;; handling automatic ts-mode
+(add-to-list 'major-mode-remap-alist
+	     '(python-mode . python-ts-mode))
