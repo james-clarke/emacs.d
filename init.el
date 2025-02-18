@@ -35,25 +35,26 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
-;; need my vim keybindings
-(use-package evil
-  :ensure t
-  :init
-  (setq evil-want-integration t)
-  (setq evil-want-keybinding nil)
-  :config
-  (evil-mode 1))
+;; gonna experiment without this for a while...
+;; (use-package evil
+;;   :ensure t
+;;   :init
+;;   (setq evil-want-integration t)
+;;   (setq evil-want-keybinding nil)
+;;   :config
+;;   (evil-mode 1))
 
-;; must have
-(use-package evil-collection
-  :after evil
-  :ensure t
-  :config
-  (evil-collection-init))
+;; don't need this anymore now
+;; (use-package evil-collection
+;;   :after evil
+;;   :ensure t
+;;   :config
+;;   (evil-collection-init))
 
-;; provides useful functions for evil
-(use-package goto-chg
-  :ensure t)
+;; provides useful functions for evil...
+;; that I no longer need haha
+;; (use-package goto-chg
+;;   :ensure t)
 
 ;; helps learn emacs specific bindings
 (use-package which-key
@@ -94,7 +95,7 @@
   :config
   (setq dashboard-projects-backend 'projectile)
   (setq dashboard-banner-logo-title "james-clarke's emacs config: github.com/james-clarke/emacs.d")
-  (setq dashboard-startup-banner "~/Pictures/pp-small.png")
+  (setq dashboard-startup-banner "~/Pictures/profile.png")
   (setq dashboard-center-content t)
   (setq dashboard-items '((recents   . 5)
 			  (bookmarks . 5)
@@ -133,9 +134,10 @@
 	      ("C-x t M-t" . treemacs-find-tag)))
 
 ;; treemacs integrations
-(use-package treemacs-evil
-  :after (treemacs evil)
-  :ensure t)
+;; don't currently need this
+;; (use-package treemacs-evil
+;;   :after (treemacs evil)
+;;   :ensure t)
 (use-package treemacs-projectile
   :after (treemacs projectile)
   :ensure t)
