@@ -134,10 +134,12 @@
 	      ("C-x t M-t" . treemacs-find-tag)))
 
 ;; treemacs integrations
+
 ;; don't currently need this
 ;; (use-package treemacs-evil
 ;;   :after (treemacs evil)
 ;;   :ensure t)
+
 (use-package treemacs-projectile
   :after (treemacs projectile)
   :ensure t)
