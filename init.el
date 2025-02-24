@@ -90,9 +90,13 @@
   (projectile-discover-projects-in-search-path)
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map))
 
-;; need some nice icons
-(use-package all-the-icons-nerd-fonts
+;; icons
+(use-package nerd-icons
   :ensure t)
+(use-package nerd-icons-dired
+  :ensure t
+  :hook
+  (dired-mode . nerd-icons-dired-mode))
 
 ;; make it look nice
 ;; (use-package dashboard
