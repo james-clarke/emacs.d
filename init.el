@@ -154,22 +154,6 @@
 (use-package magit
   :ensure t)
 
-;; give me tabs
-(use-package centaur-tabs 
-  :demand
-  :config
-  (centaur-tabs-mode t)
-  (setq centaur-tabs-height 16)
-  (setq centaur-tabs-set-icons t)
-  (setq centaur-tabs-icon-type 'nerd-icons)
-  (setq centaur-tabs-set-bar 'under)
-  (setq x-underline-at-descent-line t)
-  (setq centaur-tabs-set-close-button nil)
-  (setq centaur-tabs-set-modified-marker t)
-  :bind
-  ("C-S-<tab>" . centaur-tabs-backward)
-  ("C-<tab>" . centaur-tabs-forward))
-
 ;; auto-completion framework
 (use-package company
   :ensure t
