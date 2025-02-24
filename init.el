@@ -16,6 +16,10 @@
 ;; remove start-up screen
 (setq inhibit-startup-screen t)
 
+;; cursor movement
+(global-set-key (kbd "s-<up>") #'beginning-of-buffer)
+(global-set-key (kbd "s-<down>") #'end-of-buffer)
+
 ;; font
 (add-to-list 'default-frame-alist
              '(font . "SFMono Nerd Font-16"))
@@ -81,6 +85,7 @@
   :ensure t
   :init
   (setq projectile-project-search-path '("~/Developer/"))
+  (setq projectile-discover-projects-in-search-path t)
   :config
   (projectile-mode +1)
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map))
