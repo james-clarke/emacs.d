@@ -85,9 +85,9 @@
   :ensure t
   :init
   (setq projectile-project-search-path '("~/Developer/"))
-  (setq projectile-discover-projects-in-search-path t)
   :config
   (projectile-mode +1)
+  (projectile-discover-projects-in-search-path)
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map))
 
 ;; need some nice icons
