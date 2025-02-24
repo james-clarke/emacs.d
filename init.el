@@ -171,3 +171,6 @@
 ;; handling automatic ts-mode
 (add-to-list 'major-mode-remap-alist
 	     '(python-mode . python-ts-mode))
+
+(add-to-list 'major-mode-remap-alist
+	     '(c-mode . c-ts-mode))
