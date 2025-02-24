@@ -20,9 +20,12 @@
 (global-set-key (kbd "s-<up>") #'beginning-of-buffer)
 (global-set-key (kbd "s-<down>") #'end-of-buffer)
 
+;; specify starting window size:
+(add-to-list 'default-frame-alist '(width . 105))
+(add-to-list 'default-frame-alist '(height . 45))
+
 ;; font
-(add-to-list 'default-frame-alist
-             '(font . "SFMono Nerd Font-16"))
+(add-to-list 'default-frame-alist '(font . "SFMono Nerd Font-16"))
 
 ;; add line numbers
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
