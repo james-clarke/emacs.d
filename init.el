@@ -92,6 +92,10 @@
 (use-package magit
   :ensure t)
 
+;; mini map
+(use-package demap
+  :ensure t)
+
 ;; auto-completion framework
 (use-package company
   :ensure t
