@@ -98,6 +98,17 @@
   :config
   (add-hook 'after-init-hook 'global-company-mode))
 
+;; code snippets
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-reload-all)
+  (add-hook 'prog-mode-hook #'yas-minor-mode))
+
+;; snippit collection for yas
+(use-package yasnippet-snippets
+  :ensure t)
+
 ;; basic syntax checking
 (use-package flycheck
   :ensure t
